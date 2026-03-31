@@ -22,7 +22,7 @@
                 <span><a href="#aboutUs">About Us</a></span>
                 <span><a href="#projects">Projects</a></span>
                 <span><a href="#pricing">Pricing</a></span>
-                <span><a href="#contact">Contact Us</a></span>
+                <span><a href="#contact">Contact</a></span>
             </div>
         </nav>
     </header>
@@ -47,7 +47,7 @@
 
     <div class="aboutUsSection" id="aboutUs">
 
-        <h2 class="sectionHead">Why Us?</h2>
+        <h2 class="sectionHead">What We Do</h2>
         <p>Our custom and well-tailored sites gives you value for your money</p>
 
         <div class="sectionContent">
@@ -130,40 +130,46 @@
         </div>
     </div>
 
-    <div class="enquirySection">
+    <div class="enquirySection" id="contact">
 
-        <span class="sectionContent">
+        <div class="sectionContent">
+            <p> <span>FOR MORE ENQUIRIES</span>, <br>Send Us A Message <br> OR <br> Book A Call With Us </p>
+        </div>
+        <div class="sectionContent">
             <form>
                 <label for="name">
-                    <input type="text" name="name" id="">
+                    <legend>Name<span>*</span></legend>
+                    <input type="text" name="name" id="name" autocomplete="on" required>
                 </label>
 
-                <label for="name">
-                    <input type="text" name="name" id="">
+                <label for="email">
+                     <legend>Email<span>*</span></legend>
+                    <input type="email" name="email" id="email" autocomplete="on" required>
                 </label>
 
-                <label for="name">
-                    <input type="text" name="name" id="">
+                <label for="telNo">
+                     <legend>Telephone Number<span>*</span></legend>
+                    <input type="tel" name="telNo" id="telNo" autocomplete="on" required>
                 </label>
 
-                <label for="name">
-                    <input type="text" name="name" id="">
+                <label for="message">
+                     <legend>Message<span>*</span></legend>
+                    <textarea name="message" id="message" cols="41" rows="5"></textarea>
                 </label>
-
-                <input type="datetime-local" name="" id="">
+                
+                <div><button type="submit" class="formSubmit">SUBMIT</button></div>
 
             </form>
-        </span>
-        <span class="sectionContent">
-            <p> edfgfrb efgbcs feqf efgrwdgc fw f</p>
-        </span>
-        <div class="callR">
-        <button class="call">BOOK A CALL</button>
         </div>
+
 
     </div>
 
-    <div class="moreInfoSection" id="contact">
+    <div class="callR">
+        <button class="call">BOOK A CALL</button>
+    </div>
+
+    <div class="moreInfoSection" >
 
         <p class="sectionContent">In the meantime...</p>
         <p class="sectionContent">you can check out our...</p>
@@ -172,19 +178,38 @@
 
     </div>
 </main>
-    <footer>
+    <footer class="footer">
         <div>
             <h3>Contact Us</h3>
+            <p>☎  +233 556525067</p>
+            <p>✉  nana.abeyie.boateng.15@gmail.com</p>
             
 
-        </div>
-
+<!-- 
         <div>
-            
+            <a href="">Home</a><br>
+            <a href="">About Us</a><br>
+            <a href="">Projects</a><br>
+            <p class="siteCopyNTerms">&copy; 2026 | enkab web design</p>
+        </div> -->
+
         </div>
 
-        <p>COPYRIGHT</p>
+        <div class="socialIconBox">
+            <h3>Follow Us</h3>
+            <a href=""><img src="instagramIcon.svg" class="ig socialIcon"> enkabwebdesign</a><br>
+            <a href=""><img src="facebookIcon.svg" alt="" class="fb socialIcon"> enkabwebdesign</a><br>
+            <a href="">Cookie Policy</a>
+            
+
+        </div>
+
+            
+
     </footer>
 </body>
 
 </html>
+
+
+ <!-- <input type="datetime-local" name="" id="" required> -->

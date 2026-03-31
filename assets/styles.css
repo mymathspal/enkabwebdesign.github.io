@@ -22,9 +22,9 @@ body{
     justify-content: space-around;
     align-content: center;
     /* width: 100vw; */
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     width: 100%;
-    height: 5rem;
+    height: 6.5rem;
     background-color: #000;
     position: fixed;
     top: 0;
@@ -39,7 +39,7 @@ body{
 }
 
 
-a{
+.headLinksBox span a{
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
@@ -54,14 +54,14 @@ a{
 .heroSection{
     display: flex;
     flex-direction: row;
-    margin-top: 5rem;
+    margin-top: 7rem;
     /* width: 100vw; */
     width: 100%;
 }
 
 .heroText{
     /* width: 65vw; */
-    width: 65%;
+    width: 55%;
 }
 
 .call{
@@ -142,6 +142,7 @@ a{
     text-align: right;
     padding: 10px;
 } */
+
 .price{
     display: flex;
     flex-direction: row;
@@ -151,8 +152,77 @@ a{
 }
 
 .price span{
-    width: 30%;
+    width: 40%;
     height: 300px;
     border: 2px solid black;
     margin: 20px;
 }
+
+
+.enquirySection{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    justify-content: center;
+    margin: 15px;
+    flex-wrap: wrap;
+    
+
+}
+
+legend{
+    text-align: left;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.enquirySection .sectionContent label input, .formSubmit{
+    width: 20rem;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    padding: 0 15px;
+}
+
+.formSubmit{
+    background-color:#015601;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-top: 15px;
+}
+
+
+.socialIcon{
+   width: 1.5rem;
+   height: 1.5rem;
+}
+
+
+
+.footer{
+   /* display: grid;
+   grid-template-columns: 1fr 1fr; */
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
+
+   /* padding: 0 35px; */
+    background-color: #202020;
+    color: #00b600;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+}
+
+.socialIconBox a{
+    display: flex;
+    align-content: center;
+    color: #00b600;
+}
+
+
+
+
