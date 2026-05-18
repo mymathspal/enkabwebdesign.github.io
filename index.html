@@ -86,10 +86,10 @@
                 <form class="bookForm" action="" method="post">
                     <div class="closeBtnBox"><button type="button" class="closeFormBtn" onclick="closeBtn()">&Cross;</button></div>
                     
-                    <label for="fullName">Full Name *</label>
+                    <label for="fullName">Full Name *<span class="nameErr"></span></label>
                     <input type="text" name="name" id="fullName">
                     
-                    <label for="email">Email *</label>
+                    <label for="email">Email *<span class="emailErr"></span></label>
                     <input type="email" name="email" id="email">
                     
                     <label for="telNum">Tel Number </label>
@@ -101,7 +101,7 @@
                     <label for="date">Date </label>
                     <input type="date" name="date" id="date" min="new Date()" max="">
                    
-                    <button type="submit" class="bookBtn">BOOK</button>
+                    <button type="submit" class="bookBtn" onclick="submitBookCallForm(event)">BOOK</button>
 
                 </form>
             </dialog>
@@ -121,13 +121,13 @@
 
         <div class="one">
             <div class="sectionContent11">
-                <img src="" alt="" class="gg">
+                <img src="HVAC site (1).png" alt="" class="gg">
             </div>
             <div class="sectionContent11">
-                <img src="" alt="" class="gg">
+                <img src="Cleaning (1).png" alt="" class="gg">
             </div>
             <div class="sectionContent11">
-                <img src="" alt="" class="gg">
+                <img src="HVAC site (1).png" alt="" class="gg">
             </div>
 
         </div>
@@ -300,9 +300,9 @@
                     <input type="email" name="email" id="email" autocomplete="on" required>
                 </label>
 
-                <label for="telNo">
+                <label for="telNum">
                      <legend>Telephone Number<span>*</span></legend>
-                    <input type="tel" name="telNo" id="telNo" autocomplete="on" required>
+                    <input type="tel" name="telNum" id="telNum" autocomplete="on" required>
                 </label>
 
                 <div class="reason">

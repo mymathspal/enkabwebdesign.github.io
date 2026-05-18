@@ -34,7 +34,7 @@ body{
 }
 
 .even{
-    background-color: #c8c8c8;
+    background-color: #ececec;
 }
 
 .headLinksBox span a{
@@ -108,7 +108,7 @@ body{
 
 .bookForm input{
     padding: 5px;
-    font-size: 1.12rem;
+    font-size: 1.1rem;
     font-weight: 400;
     align-items: flex-start;
 
@@ -227,8 +227,8 @@ body{
 
 .one .sectionContent11{
     text-align: center;
-    width: 30rem;
-    height: 20rem;
+    /* width: 30rem;
+    height: 20rem; */
     margin: 20px;
     padding: 0.5px 0;
     border: 5px solid black !important;
@@ -276,6 +276,7 @@ body{
     width: 80%;
     padding: 20px;
     margin: 10px;
+    font-size: 1.1rem;
     /* background-color: #cacaca; */
     border-radius: 10px;
     box-shadow: 0 5px 10px #000;
@@ -300,28 +301,28 @@ body{
 .price .priceBox{
     width: 95%;
     height: auto;
-    border: 2px solid black;
+    /* border: 0.5px solid black; */
     padding: 15px;
     margin: 10px;
     text-align: justify;
-    line-height: 2rem;
+    /* line-height: 2rem; */
     /* background-color: #181818; */
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     border-radius: 35px;
-    box-shadow: 0 5px 8px #00b600;
-    font-size: 1.15rem;
+    box-shadow: 0 3px 5px #001200;
+    font-size: 1.1rem;
 }
 
 .tt{
     font-size: 1.8rem;
-    color: #00c400;
+    color: #000;
     font-weight: 700;
     text-align: center;
 }
 
 .inn, .notinn{
-    background-color:#1e3e1e;
+    background-color:#d4f9d4;
     padding: 0 5px;
     font-weight: 500;
     border-radius: 10px;
@@ -332,11 +333,11 @@ body{
 }
 
 .notinn{
-    background-color: #4e2424;
+    background-color: #ffc1c1;
 }
 
 .add{
-    color: #00c400;
+    color: #004700;
     text-align: center;
     border: 0.1px dotted #707070;
     border-radius: 5px;
@@ -356,6 +357,7 @@ body{
 
 
 .enquirySection{
+    font-size: 1.1rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -381,6 +383,11 @@ body{
 
 input[type="radio"]{
     accent-color: green;    
+}
+
+
+.nameErr, .emailErr{
+    color: red;
 }
 
 legend{

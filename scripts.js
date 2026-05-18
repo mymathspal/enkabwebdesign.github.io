@@ -5,6 +5,14 @@ document.querySelector(".body").appendChild(templateClone);
 const bookCallModal = document.querySelector(".bookCallModal");
 const closeFormBtn = document.querySelector(".closeFormBtn");
 
+const nameInputEl = document.getElementById("name");
+const emailInputEl = document.getElementById("email");
+const telNumberInputEl = document.getElementById("telNum");
+
+const nameErrMsg = document.querySelector(".nameErr");
+
+
+
 function bookCall(event){
     bookCallModal.showModal();
 }
@@ -13,11 +21,16 @@ function closeBtn(){
     bookCallModal.close();
 }
 
-function validateName(){
+function isvalidName(name){
+    if (!nameInputEl){
+        // nameInputEl.style.border = "2px solid red";
+        return;
+    }
+    
 
 }
 
-function validateEmail(){
+function isvalidEmail(){
 
 }
 
@@ -27,7 +40,16 @@ function telNumber(){
 
 function submitBookCallForm(event){
     if(event.type === "click"){
-        event.preventDefault()
+        if(!isvalidName(name)){
+            event.preventDefault();
+            nameErrMsg.textContent = "Please enter your fullname";
+            // nameErrMsg.style.color="red";
+
+            console.log("not valid");
+        }
+        else{
+            nameErrMsg.textContent = "";
+        }
     }
     return;
     
