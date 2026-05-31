@@ -444,6 +444,10 @@ input[type="radio"]{
     accent-color: green;    
 }
 
+textarea{
+    resize: none;
+}
+
 
 .nameErr, .emailErr{
     color: red;
