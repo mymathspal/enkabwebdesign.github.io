@@ -3,24 +3,8 @@ box-sizing: border-box;
 scroll-behavior: smooth;
 }
 
-@font-face{
-    font-family: 'Quicksand';
-    src: url(./fonts/Quicksand-Regular.woff2) format('woff2');
-    font-weight: normal;
-    font-display: swap;
-}
-
-@font-face{
-    font-family: 'Quicksand';
-    src: url(./fonts/Quicksand-Bold.woff2) format('woff2');
-    font-weight: bold;
-    font-display: swap;
-}
-
-
-
 body{
-    font-family: 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
     top: 0;
@@ -28,6 +12,10 @@ body{
   }
 
 .body{
+    text-align: left;
+}
+
+.sectionHead, .sc{
     text-align: center;
 }
 
@@ -38,8 +26,8 @@ body{
     justify-content: space-around;
     align-content: center;
     width: 100%;
-    height: 6.5rem;
-    background-color: #000;
+    height: 3.5rem;
+    background-color: #1d1d1f;
     position: fixed;
     top: 0;
     left: 0;
@@ -51,25 +39,17 @@ body{
     height: auto;
 }
 
-.even{
-    background-color: #ececec;
-}
-
 .headLinksBox span a{
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 600;
     color: #c5c5c5;
-    /* color: #bcbcbc; */
     overflow: hidden;
     transition: 1s ease;
 }
 
 .headLinksBox span a:hover{
-    /* padding: 5px;
-    box-shadow: 1.5px 2px 4px #00b600; */
-    color: #fff;
-    font-size: 1.25rem;
+     color: #ffffff;
 
 }
 
@@ -82,17 +62,26 @@ body{
     flex-direction: column;
     padding-top: 4rem;
     width: 100%;
-    background-color: #000;
+    background-color: #1d1d1f;
+}
+
+h1, h2{
+    font-weight: 800;
+}
+
+p{
+    font-weight: 400;
 }
 
 .heroText{
     width: 100%;
     font-size: 1.5rem;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
     line-height: 200%;
-    text-align: center;
-    color: #fff;
-    padding: 0 3px;    
+    text-align: left;
+    color: #ffffff;
+    padding: 0 5px; 
+    padding-left: 25px;   
 }
 
 .context{
@@ -106,8 +95,6 @@ body{
     width: 100%;
     height: auto;
     margin: 0 auto;
-    /* padding-top: 3rem; */
-    /* justify-content: center; */
 }
 
 .heroImgBox img{
@@ -135,10 +122,6 @@ body{
     font-size: 1.1rem;
     font-weight: 400;
     align-items: flex-start;
-
-    /* padding: 10px;
-    margin: 10px; */
-    /* border: 2px solid red; */
 }
 
 .bookCallModal{
@@ -172,10 +155,8 @@ body{
 }
 
 .build{
-    background-color:#015601;
-    color: #fff;
+    color: hsl(120, 100%, 40%);
     padding: 0 5px;
-    font-size: 1.8rem;
 }
 
 .call{
@@ -184,7 +165,7 @@ body{
     margin: 20px;
     color:#fff;
     font-weight: 600;
-    background-color: #015601;
+    background-color: hsl(120, 100%, 20%);
     border: 0.5px solid #fff;
     outline: 3px solid #015601;
     border-radius: 5px;
@@ -197,7 +178,7 @@ body{
 }
 
 .call:hover{
-    transform: scale(1.01);
+    background-color: hsl(120, 100%, 25%);
     box-shadow: 3px 5px 8px #000;
 }
 
@@ -206,7 +187,8 @@ body{
     flex-direction: row;
     padding: 20px;
     flex-wrap: wrap;
-    transition: transform 1s ease;
+    color: #1d1d1f;
+    /* transition: transform 300ms ease; */
 }
 
 
@@ -226,14 +208,14 @@ body{
 }
 
 
-.sectionContent:hover{
-    transform: translateY(4px) scale(1.02);
+/* .sectionContent:hover{
+    transform: translateY(2px) scale(1.02);
 
-}
+} */
 
-.sectionContent:last-child{
+/* .sectionContent:last-child{
     justify-content: center;
-}
+} */
 
 
 .sectionContent h3{
@@ -280,6 +262,7 @@ body{
 .sectionHead{
     font-size: 2.5rem;
     letter-spacing: -1px;
+    color: #1d1d1f;
 }
 
 .sectionHead + p{
@@ -299,7 +282,7 @@ body{
     width: 6rem;
     height: 6rem;
     padding: 10px;
-    background-color: #000;
+    background-color: #1d1d1f;
     border-radius: 50%;
 }
 
@@ -309,11 +292,13 @@ body{
     padding: 20px;
     margin: 10px;
     font-size: 1.1rem;
-    /* background-color: #cacaca; */
-    border-radius: 10px;
-    box-shadow: 0 5px 10px #000;
+    border-radius: 4px;
+    border: 0.2px solid hsl(240, 3%, 80%);
+    box-shadow: 0 5px 10px hsl(240, 3%, 90%);
 
 }
+
+
 
 
 .pricingSection{
@@ -334,22 +319,20 @@ body{
 .price .priceBox{
     width: 95%;
     height: auto;
-    /* border: 0.5px solid black; */
+    border: 0.2px solid hsl(240, 3%, 80%);
     padding: 15px;
     margin: 10px;
     text-align: justify;
-    /* line-height: 2rem; */
-    /* background-color: #181818; */
     background-color: #fff;
     color: #000;
-    border-radius: 35px;
-    box-shadow: 0 2px 4px #001200;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px hsl(240, 3%, 90%);
     font-size: 1.1rem;
 }
 
 .tt{
     font-size: 1.8rem;
-    color: #000;
+    color: #1d1d1f;
     font-weight: 700;
     text-align: center;
 }
@@ -365,9 +348,9 @@ body{
     padding: 0;
 }
 
-.notinn{
+/* .notinn{ */
     /* background-color: #ffc1c1; */
-}
+/* } */
 
 .add{
     /* color: #004700; */
@@ -395,20 +378,15 @@ body{
 .faq{
     padding: 15px;
     margin: 5px;
-    background-color: #ececec;
-    border: 2px solid black;
+    background-color: hsl(240, 3%, 90%);
+    border: 0.2px solid hsl(240, 3%, 80%);
+    /* box-shadow: 0 2px 4px hsl(240, 3%, 90%); */
     cursor: pointer;
 }
 
 .faq summary{
     font-weight: bold;
 }
-
-
-
-
-
-
 
 .moreEnquiryTxt{
     display: flex;
@@ -434,8 +412,9 @@ body{
     width: 20rem;
     height: 35px;
     border-radius: 15px;
-    /* border: none; */
+    border: none;
     padding: 0 15px;
+    background-color: hsl(240, 2%, 95%);
 }
 
 .reason{
@@ -450,6 +429,14 @@ input[type="radio"]{
 
 textarea{
     resize: none;
+    background-color: hsl(240, 2%, 95%);
+    border: none;
+
+}
+
+.enquirySection label input:active{
+    border: 1px solid hsl(120, 100%, 25%);
+    color: yellow;
 }
 
 
@@ -504,25 +491,27 @@ legend{
     height: auto;
     bottom: 0;
     left: 0;
+    text-align: center;
+    padding: 15px;
 }
 
 .footer a{
     /* color: #00b600; */
     color:#c5c5c5;
-    padding: 0 15px;
+    padding: 10px 15px;
     text-decoration: none;
     transition: 1s ease;
 }
 
 .footer a:hover{
     color: #fff;
-    font-size: 1.1rem;
 }
 
 
 /* this is for any screen other than phones */
 
 @media (min-width: 768px){
+
 .heroSection{
     flex-direction: row;
     padding-top: 4rem;
@@ -557,18 +546,18 @@ legend{
     width: 45%;
 }
 
-.whatWeDoBox div:last-child{
+/* .whatWeDoBox div:last-child{
    justify-content: center;
-}
+} */
 
 .whatWeDoBox .sectionContent p{
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 
 .processContainer{
     flex-direction: row;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
     justify-content: space-around;
 }
 
