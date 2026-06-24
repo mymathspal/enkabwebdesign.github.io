@@ -270,6 +270,16 @@ p:not(.footer p, .context, .tt, .add){
     border-radius: 50%;
 }
 
+.num{
+    font-size: 5rem;
+    font-weight: 700;
+    display: inline;
+    float: right;
+    letter-spacing: -6px;
+    color: hsl(0, 0%, 55%);
+    
+}
+
 .processBox{
     display: block;
     width: 80%;
@@ -475,6 +485,13 @@ legend{
     .navBar{
         height: 6rem;
  }
+
+
+ .heroSection{
+    padding-top: 6.5rem;
+ }
+
+
 }
 
 /* this is for any screen other than phones */
