@@ -11,6 +11,9 @@ const telNumberInputEl = document.getElementById("telNum");
 
 const nameErrMsg = document.querySelector(".nameErr");
 
+const menuBtn = document.querySelector(".menu-btn");
+const menuBox = document.querySelector(".headLinksBox");
+
 
 
 function bookCall(event){
@@ -81,3 +84,8 @@ function submitEnquiryForm(event){
 //     // bookCallModal.style.display="none";
 //     bookCallModal.close();
 // }
+
+
+menuBtn.addEventListener("click", (event) => {
+   menuBox.classList.toggle("openMenu");
+})
