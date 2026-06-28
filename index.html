@@ -90,19 +90,19 @@
                     <div class="closeBtnBox"><button type="button" class="closeFormBtn" onclick="closeBtn()">&Cross;</button></div>
                     
                     <label for="fullName">Full Name *<span class="nameErr"></span></label>
-                    <input type="text" name="name" id="fullName">
+                    <input type="text" name="name" id="fullName" required>
                     
-                    <label for="email">Email *<span class="emailErr"></span></label>
-                    <input type="email" name="email" id="email">
+                    <label for="modalemail">Email *<span class="emailErr"></span></label>
+                    <input type="email" name="email" id="modalEmail" required>
                     
-                    <label for="telNum">Tel Number </label>
-                    <input type="tel" name="telNum" id="telNum">
+                    <label for="modaltelNum">Tel Number *<span class="telNumErr"></span></label>
+                    <input type="tel" name="telNum" id="modaltelNum" minlength="7" maxlength="15" required>
                    
-                    <label for="industry">Industry *</label>
-                    <input type="search" name="industry" id="industry" placeholder="e.g Cleaning services...">
+                    <label for="industry">Industry *<span class="industryErr"></span></label>
+                    <input type="text" name="industry" id="industry" placeholder="e.g Cleaning services..." required>
                     
-                    <label for="date">Date </label>
-                    <input type="date" name="date" id="date" min="new Date()" max="">
+                    <label for="subject">Special Request? *<span class="subjectErr"></span></label>
+                    <textarea name="subject" id="subject" cols="41" rows="5" placeholder="I would like us to talk about ..." required></textarea>
                    
                     <button type="submit" class="bookBtn" onclick="submitBookCallForm(event)">BOOK</button>
 
@@ -362,13 +362,13 @@
                     <input type="tel" name="telNum" id="telNum" autocomplete="on" required>
                 </label>
 
-                <div class="reason">
+                <fieldset class="reason">
                     <legend>Reason for enquiry</legend>
-                    <input type="radio" name="reason for enquiry" id="tradesPackage" value="I want the webPro Package"><label for="tradesPackage">I want the TradeswebPro Package</label><br>
-                    <input type="radio" name="reason for enquiry" id="trades+Package" value="I want the webPro+ Package"><label for="trades+Package">I want the TradeswebPro+ Package</label><br>
-                    <input type="radio" name="reason for enquiry" id="quote" value="Quote for a custom build"><label for="quote">Quote for the Tradesweb Xtra Package</label><br>
-                    <input type="radio" name="reason for enquiry" id="general" value="General enquiry"><label for="general">General Enquiry</label><br>
-                </div>
+                    <input type="radio" name="reason" id="tradesPackage" value="I want the webPro Package"><label for="tradesPackage">I want the TradeswebPro Package</label><br>
+                    <input type="radio" name="reason" id="trades+Package" value="I want the webPro+ Package"><label for="trades+Package">I want the TradeswebPro+ Package</label><br>
+                    <input type="radio" name="reason" id="quote" value="Quote for a custom build"><label for="quote">Quote for the Tradesweb Xtra Package</label><br>
+                    <input type="radio" name="reason" id="general" value="General enquiry"><label for="general">General Enquiry</label><br>
+                </fieldset>
     
 
 

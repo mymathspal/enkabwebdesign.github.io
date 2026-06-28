@@ -5,58 +5,97 @@ document.querySelector(".body").appendChild(templateClone);
 const bookCallModal = document.querySelector(".bookCallModal");
 const closeFormBtn = document.querySelector(".closeFormBtn");
 
-const nameInputEl = document.getElementById("name");
-const emailInputEl = document.getElementById("email");
-const telNumberInputEl = document.getElementById("telNum");
+const nameInputEl = document.getElementById("fullName");
+const emailInputEl = document.getElementById("modalEmail");
+const telNumberInputEl = document.getElementById("modaltelNum");
+const industryInputEl = document.getElementById("industry");
+const subjectInputEl = document.getElementById("subject");
+const enquiryReasonInputEl = document.querySelector("input[name='reason']:checked");
 
-const nameErrMsg = document.querySelector(".nameErr");
+let nameErrMsg = document.querySelector(".nameErr");
+let emailErrMsg = document.querySelector(".emailErr");
+let telNumErrMsg = document.querySelector(".telNumErr");
+let industryErrMsg = document.querySelector(".industryErr");
+let subjectErrMsg = document.querySelector(".subjectErr");
 
 const menuBtn = document.querySelector(".menu-btn");
 const menuBox = document.querySelector(".headLinksBox");
-
-
 
 function bookCall(event){
     bookCallModal.showModal();
 }
 
-function closeBtn(){
-    bookCallModal.close();
+function closeBtn(){bookCallModal.close();}
+
+function isvalidName(fullName, nameErrMsg){
+    const fullname = fullName.value.trim();
+    nameErrMsg.textContent = ""; 
+
+    if (fullname.split(/\s+/g).length < 2){ nameErrMsg.textContent = "Please enter your fullname"; return false; }
+    return fullname; 
+
 }
 
-function isvalidName(name){
-    if (!nameInputEl){
-        // nameInputEl.style.border = "2px solid red";
-        return;
-    }
+function isvalidEmail(emailEl, emailErrMsg){
+    const email = emailEl.value.trim();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    emailErrMsg.textContent = "";
+
+    if (email === "" || !emailRegex.test(email)){ emailErrMsg.textContent = "Please enter a valid email"; return false; }
+    return email;
     
+}
+
+function isvalidtelNumber(telNumber, telNumErrMsg){
+    const telNum = telNumber.value.trim();
+    const telNumRegex = /^\+?[0-9\s()-]{7,20}$/;
+    telNumErrMsg.textContent = "";
+
+    if(telNum === "" || !telNumRegex.test(telNum)){
+        telNumErrMsg.textContent = "Please enter a valid telephone number"; 
+        return false;
+    }
+    return telNum;
+}
+
+function isvalidIndustry(industryEl, industryErrMsg){
+    const industry = industryEl.value.trim();
+    industryErrMsg.textContent = "";
+    
+    if (industry === ""){
+        industryErrMsg.textContent = "Please enter a valid industry name";
+        return false;
+    }
+    return industry;
 
 }
 
-function isvalidEmail(){
+function isvalidMessage(messageEl, subjectErrMsg){
+    const message = messageEl.value.trim();
+    subjectErrMsg.textContent = "";
 
-}
-
-function telNumber(){
-
+    if(message.split(/\s+/).length < 5){
+        subjectErrMsg.textContent = "Tell us more...";
+        return false;
+    }
+    return message;
 }
 
 function submitBookCallForm(event){
-    if(event.type === "click"){
-        if(!isvalidName(name)){
-            event.preventDefault();
-            nameErrMsg.textContent = "Please enter your fullname";
-            // nameErrMsg.style.color="red";
+       event.preventDefault();
+       
+       const validName = isvalidName(nameInputEl, nameErrMsg);
+       const validEmail = isvalidEmail(emailInputEl, emailErrMsg);
+       const validTelNumber = isvalidtelNumber(telNumberInputEl, telNumErrMsg);
+       const validIndustry = isvalidIndustry(industryInputEl, industryErrMsg);
+       const validSubject = isvalidMessage(subjectInputEl, subjectErrMsg);
 
-            console.log("not valid");
-        }
-        else{
-            nameErrMsg.textContent = "";
-        }
-    }
-    return;
-    
+
+       if (!validName || !validEmail || !validTelNumber || !validIndustry || !validSubject){ return; }
+       console.log(validName, validEmail, validTelNumber, validIndustry, validSubject)
+       console.log("workinggg");
 }
+
 
 function submitEnquiryForm(event){
     if(event.type === "click"){
@@ -65,27 +104,8 @@ function submitEnquiryForm(event){
     return;
 }
 
-
-
-
-
-// const bookCall = (event) => {
-//     bookCallModal.showModal();
-//     // console.log(event);
-//     // if(event.type === "click"){
-//     //     event.preventDefault()
-//     //      console.log("default");
-//     // }
-//     // console.log("book call btn clicked");
-// }
-
-
-// const closeBtn = () => {
-//     // bookCallModal.style.display="none";
-//     bookCallModal.close();
-// }
-
-
 menuBtn.addEventListener("click", (event) => {
-   menuBox.classList.toggle("openMenu");
+   const menuOpen = menuBox.classList.toggle("openMenu");
+   menuOpen ? menuBtn.textContent = "Close" : menuBtn.textContent = " Menu";
+
 })
