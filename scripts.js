@@ -5,13 +5,23 @@ document.querySelector(".body").appendChild(templateClone);
 const bookCallModal = document.querySelector(".bookCallModal");
 const closeFormBtn = document.querySelector(".closeFormBtn");
 
+// book call modal
 const nameInputEl = document.getElementById("fullName");
 const emailInputEl = document.getElementById("modalEmail");
 const telNumberInputEl = document.getElementById("modaltelNum");
 const industryInputEl = document.getElementById("industry");
 const subjectInputEl = document.getElementById("subject");
-const enquiryReasonInputEl = document.querySelector("input[name='reason']:checked");
 
+// enquiry form
+const enquiryName = document.getElementById("name");
+const enquiryEmail = document.getElementById("email");
+const enquiryTelNum = document.getElementById("telNum");
+// const enquiryReason = document.querySelector("input[name='reason']:checked");
+const enquiryReason = document.querySelector("input[name='reason']");
+const enquiryMessage = document.getElementById("message");
+const contactFormBtn = document.querySelector(".formSubmit");
+
+// error messages
 let nameErrMsg = document.querySelector(".nameErr");
 let emailErrMsg = document.querySelector(".emailErr");
 let telNumErrMsg = document.querySelector(".telNumErr");
@@ -82,7 +92,6 @@ function isvalidMessage(messageEl, subjectErrMsg){
 }
 
 function submitBookCallForm(event){
-       event.preventDefault();
        
        const validName = isvalidName(nameInputEl, nameErrMsg);
        const validEmail = isvalidEmail(emailInputEl, emailErrMsg);
@@ -90,19 +99,62 @@ function submitBookCallForm(event){
        const validIndustry = isvalidIndustry(industryInputEl, industryErrMsg);
        const validSubject = isvalidMessage(subjectInputEl, subjectErrMsg);
 
+       if (!validName || !validEmail || !validTelNumber || !validIndustry || !validSubject){
+         event.preventDefault();
+         return; 
 
-       if (!validName || !validEmail || !validTelNumber || !validIndustry || !validSubject){ return; }
+        }
        console.log(validName, validEmail, validTelNumber, validIndustry, validSubject)
        console.log("workinggg");
 }
 
+contactFormBtn.addEventListener("click", (event) =>{ submitContactForm(event); })
 
-function submitEnquiryForm(event){
-    if(event.type === "click"){
-        event.preventDefault()
+
+function submitContactForm(event){
+
+     const validName = isvalidName(enquiryName, nameErrMsg="");
+     const validEmail = isvalidEmail(enquiryEmail, emailErrMsg="");
+     const validTelNumber = isvalidtelNumber(enquiryTelNum, telNumErrMsg="");
+     const validSubject = isvalidMessage(enquiryMessage, subjectErrMsg="");
+     const reason = enquiryReason.value;
+       
+     if (!validName || !validEmail || !validTelNumber || !validSubject){
+        event.preventDefault();
+        console.log("please tellus the truth");
+        return;
     }
-    return;
+
+    const data = {
+        name: validName,
+        email: validEmail,
+        telNum: validTelNumber,
+        message: validSubject
+    }
+
+        event.preventDefault();
+
+       console.log(validEmail, validName, validTelNumber, validSubject, reason);
+
+    return data;
+    console.log(data);
+
+
+    
 }
+
+async function sendEnquiry(data){
+
+    const request = { method: "POST", body: JSON.stringify(data), headers: { "Content-Type" : "application/json" } };
+    const response = await fetch(customerURL, request);
+    const reply = await response.json();
+
+}
+
+
+
+
+
 
 menuBtn.addEventListener("click", (event) => {
    const menuOpen = menuBox.classList.toggle("openMenu");
