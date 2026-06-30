@@ -16,7 +16,6 @@ const subjectInputEl = document.getElementById("subject");
 const enquiryName = document.getElementById("name");
 const enquiryEmail = document.getElementById("email");
 const enquiryTelNum = document.getElementById("telNum");
-// const enquiryReason = document.querySelector("input[name='reason']:checked");
 const enquiryReason = document.querySelector("input[name='reason']");
 const enquiryMessage = document.getElementById("message");
 const contactFormBtn = document.querySelector(".formSubmit");
